@@ -1,0 +1,9 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    background-color: black;
+    background-image: url('./Images/space.jpg');
+    background-repeat: none;
+}

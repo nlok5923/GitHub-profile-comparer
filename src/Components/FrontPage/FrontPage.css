@@ -1,0 +1,110 @@
+.whole__pg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+
+}
+.main__head {
+    font-size:60px;
+    margin-top:7%;
+    color:white;
+    font-family:"montserrat";
+    font-weight: 1000;
+    text-align: center;
+
+}
+.user__cred {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.main__hold{
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    margin: 20%;
+    margin-top:5%;
+
+}
+.input__1,.input__2{
+    width: 45%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    margin-top:7%;
+    width: 90%;
+    height: 6vh;
+    border-radius: 20px;
+    border: 2px solid;
+    background:none;
+    font-size:20px;
+}
+.bound {
+    height: 40vh;
+    width: 1%;
+    border-radius: 30px;
+    background-color:black;
+}
+.you, .friend {
+    margin-top: 2%;
+    font-family: "montserrat";
+    color: white;
+    font-family: 20px;
+    text-align: center;
+}
+.avatar__img {
+    /* margin-left: 40%; */
+    border: 2px solid;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.nxt__btn{
+        margin-top: 4%;
+        background:black;
+        border-radius: 50%;
+        color: #FFFFFF;
+        font-size: 20px;
+        margin-left: 0;
+        font-weight: 100;
+        padding: 8px 10px;
+        border: none;
+        text-decoration: none;
+        cursor: pointer;
+        text-align: center;
+        font-family: "montserrat";
+        display: block;
+      }
+      .nxt__btn:hover {
+          background-color: white;
+          color:black;
+      }
+.next__btn{
+    background:black;
+    color: #FFFFFF;
+    font-size: 20px;
+    margin-top: 5%;
+    font-weight: 100;
+    border-radius: 50px;
+    padding: 10px 50px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    font-family: "montserrat";
+    display: block;
+  }
+  .nxt__btn:hover,.next__btn:hover {
+      background-color: white;
+      color:black;
+  }
+  #comp{
+      display: none;
+  }
