@@ -1,0 +1,19 @@
+.link__holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    margin-top:15%;
+}
+.link__holder a{
+    margin-top: 10px;
+    text-decoration:none;
+}
+.adjust__size{
+    font-size: 45px;
+    color:#f2f2f2;
+    opacity: 0.4;
+}
+.link__holder a:hover{
+    opacity: 1;
+}

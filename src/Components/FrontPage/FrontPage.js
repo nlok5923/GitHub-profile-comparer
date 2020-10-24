@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "./FrontPage.css"
 import axios from 'axios'
 import Comparer from "../Comparer/Comparer"
+import Contact from "../Contact/Contact"
 
 class FrontPage extends Component {
     constructor(props) {
@@ -17,7 +18,9 @@ class FrontPage extends Component {
              no_of_gists_1:0,
              no_of_repos_2:0,
              no_of_followers_2:0,
-             no_of_gists_2:0
+             no_of_gists_2:0,
+             max_val_f:0,
+             max_val_r:0
         }
     }
     handleUsr__1=(e)=>{
@@ -68,6 +71,27 @@ class FrontPage extends Component {
     k.style.display='none';
     let g =  document.getElementById("comp")
     g.style.display="block"
+    // if(this.state.follower_1 > this.state.follower_2){
+    //     this.setState({
+    //         max_val:this.state.follower_1+100
+    //     })
+    // }
+    // else{
+    //     this.setState({
+    //         max_val_f:this.state.follower_2+100
+    //     })
+    // }
+
+    // if(this.state.repos_1 > this.state.repos_2){
+    //     this.setState({
+    //         max_val_r:this.state.repos_1+100
+    //     })
+    // }
+    // else{
+    //     this.setState({
+    //         max_val_r:this.state.repos_2+100
+    //     })
+    // }
     // this.setState({
     //     img_1:this.state.usr__1__imgSrc,
     //     img_2:this.state.usr__2__imgSrc
@@ -146,8 +170,9 @@ class FrontPage extends Component {
             {/* no_of_followers:response.data.followers,
                 no_of_repos:response.data.public_repos,
                 no_of_gists:response.data.public_gists */}
+                <Contact />
             <div id="comp"> 
-                <Comparer repos_1={no_of_repos_1} follower_1={no_of_followers_1} gists_1={no_of_gists_1} repos_2={no_of_repos_2} follower_2={no_of_followers_2} gists_2={no_of_gists_2} usr_1={usr__1__imgSrc} usr_2={usr__2__imgSrc} />
+                <Comparer repos_1={no_of_repos_1} follower_1={no_of_followers_1} gists_1={no_of_gists_1} repos_2={no_of_repos_2} follower_2={no_of_followers_2} gists_2={no_of_gists_2} usr_1={usr__1__imgSrc} usr_2={usr__2__imgSrc}   />
              </div> 
             </div>
         )
