@@ -23,7 +23,7 @@ class Comparer extends Component {
     // }
     
     render() {
-        const {repos_1, follower_1, gists_1,repos_2, follower_2, gists_2,usr_1,usr_2} = this.props
+        const {repos_1, follower_1,repos_2, follower_2,usr_1,usr_2,star_1,star_2} = this.props
         // const {img_1,img_2} = this.state
         return (
             
@@ -35,8 +35,8 @@ class Comparer extends Component {
             <img src={usr_1} alt="usr_1_avatar"></img>
             <h1>Repos</h1>
             <meter value={repos_1} min="0" max="100"></meter>
-            <h1>Public Gists</h1>
-            <meter value={gists_1} min="0" max="100"></meter>
+            <h1>Stars</h1>
+            <meter value={star_1} min="0" max="100"></meter>
             <h1>Followers</h1>
             <meter  value={follower_1} min="0" max="100"></meter>
             {/* <h1>Contribution</h1>
@@ -46,8 +46,8 @@ class Comparer extends Component {
             <img src={usr_2}  alt="usr_2_avatar" ></img>
             <h1>Repos</h1>
             <meter  value={repos_2} min="0" max="100"></meter>
-            <h1>Public Gists</h1>
-            <meter  value={gists_2} min="0" max="100"></meter>
+            <h1>Stars</h1>
+            <meter  value={star_2} min="0" max="100"></meter>
             <h1>Followers</h1>
             <meter  value={follower_2} min="0" max="100"></meter>
             {/* <h1>Contribution</h1>
