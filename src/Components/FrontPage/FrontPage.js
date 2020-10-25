@@ -32,7 +32,15 @@ class FrontPage extends Component {
       max_val_r:0,
       max_val_fo:0,
       max_val_wa:0,
-      max_val_st:0
+      max_val_st:0,
+      w1:"",
+      w2:"",
+      w3:"",
+      w4:"",
+      w5:"",
+      c_w1:0,
+      c_w2:0,
+      winner:""
     };
   }
   handleUsr__1 = (e) => {
@@ -131,6 +139,115 @@ class FrontPage extends Component {
    max_val_st : Math.max(this.state.count_1,this.state.count_2)+20,
     max_val_wa : Math.max(this.state.watchers_1,this.state.watchers_2) + 20
     })
+
+    if(this.state.no_of_repos_1 > this.state.no_of_repos_2){
+        this.setState({
+            w1:this.state.usr__1__imgSrc,
+            c_w1:this.state.c_w1+1
+        })
+    }
+    else if(this.state.no_of_repos_1 < this.state.no_of_repos_2){
+        this.setState({
+            w1:this.state.usr__2__imgSrc,
+            c_w2:this.state.c_w2+1
+           
+        })
+    }
+    else{
+        this.setState({
+            w1:"./Images/prof.jpg"
+        })
+    }
+    if(this.state.forks_1 > this.state.forks_2){
+        this.setState({
+            w2:this.state.usr__1__imgSrc,
+            c_w1:this.state.c_w1+1
+        })
+    }
+    else if(this.state.forks_1< this.state.forks_2){
+        this.setState({
+            w2:this.state.usr__2__imgSrc,
+            c_w2:this.state.c_w2+1
+        })
+    }
+    else{
+        this.setState({
+            w2:"./Images/prof.jpg"
+        })
+    }
+    if(this.state.count_1 > this.state.count_2){
+        this.setState({
+            w3:this.state.usr__1__imgSrc,
+            c_w1:this.state.c_w1+1
+
+        })
+    }
+    else if(this.state.count_1 < this.state.count_2){
+        this.setState({
+            w3:this.state.usr__2__imgSrc,
+            c_w2:this.state.c_w2+1
+        })
+    }
+    else{
+        this.setState({
+            w3:"./Images/prof.jpg"
+        })
+    }
+    if(this.state.no_of_followers_1 > this.state.no_of_followers_2){
+        this.setState({
+            w4:this.state.usr__1__imgSrc,
+            c_w1:this.state.c_w1+1
+        })
+    }
+    else if(this.state.no_of_followers_1 < this.state.no_of_followers_2){
+        this.setState({
+            w4:this.state.usr__2__imgSrc,
+            c_w2:this.state.c_w2+1
+        })
+    }
+    else{
+        this.setState({
+            w4:"./Images/prof.jpg"
+        })
+    }
+    if(this.state.watchers_1 > this.state.watchers_2){
+        this.setState({
+            w5:this.state.usr__1__imgSrc,
+            c_w1:this.state.c_w1+1
+        })
+    }
+    else if(this.state.watchers_1 < this.state.watchers_2){
+        this.setState({
+            w5:this.state.usr__2__imgSrc,
+            c_w2:this.state.c_w2+1
+        })
+    }
+    else{
+        this.setState({
+            w5:"./Images/prof.jpg"
+        })
+    }
+    if(this.state.c_w1 > this.state.c_w2){
+        this.setState({
+            winner:this.state.usr__1__imgSrc
+        })
+
+    }
+    else if(this.state.c_w1 < this.state.c_w2){
+        this.setState({
+            winner:this.state.usr__1__imgSrc
+        })
+
+    }
+    else{
+        this.setState({
+            winner:"./Images/prof.jpg"
+        })
+
+    }
+
+
+
     }
   };
   handleChangeU2 = () => {
@@ -215,7 +332,8 @@ class FrontPage extends Component {
       max_val_r,
       max_val_fo,
       max_val_wa,
-      max_val_st
+      max_val_st,
+      w1,w2,w3,w4,w5,winner
     } = this.state;
 
     return (
@@ -295,6 +413,12 @@ class FrontPage extends Component {
             max_val_fo={ max_val_fo} 
             max_val_wa ={max_val_wa}
             max_val_st = {max_val_st}
+            w1={w1}
+            w2={w2}
+            w3={w3}
+            w4={w4}
+            w5={w5}
+            winner={winner}
           />
         </div>
       </div>

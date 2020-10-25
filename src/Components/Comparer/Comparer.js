@@ -8,6 +8,7 @@ class Comparer extends Component {
     this.state = {
       img_1: './Images/prof.jpg',
       img_2: './Images/prof.jpg',
+      winn:'./Images/prof.jpg'
     };
     // this.setState({
     //             img_1:this.props.usr_1,
@@ -48,12 +49,15 @@ class Comparer extends Component {
       max_val_fo,
       max_val_wa,
       max_val_st,
+      w1,w2,w3,w4,w5,winner
     } = this.props;
+   
     // const {img_1,img_2} = this.state
     return (
       <div>
         <div className="Comp__pg">
           <h1 className="res">Comparison</h1>
+          <div className="res__hold">
           <div className="Comp__holder">
             <div className="usr__1">
             {/* <h1> {max_val_f},
@@ -100,6 +104,25 @@ class Comparer extends Component {
               {/* <h1>Contribution</h1>
             <meter  value="2" min="0" max="10">2 out of 10</meter> */}
             </div>
+            <div className="winners">
+            <h1 className="win__head">Winners</h1>
+            <h1 className="top__ele">Repos</h1>
+            <img src={w1} alt="w1"></img>
+            <h1>Stars</h1>
+            <img src={w3} alt="w1" ></img>
+            <h1>Followers</h1>
+            <img src={w4} alt="w1" ></img>
+            <h1>Forks</h1>
+            <img src={w2} alt="w1"></img>
+            <h1>Watchers</h1>
+            <img src={w5} alt="w1" ></img>
+            </div>
+          </div>
+          <div className="win__hold">
+          <img src={winner} alt="w1" ></img>
+          <p>hello thi si the random text i am writing now this test will basiclall thhe quot said to winner becasue he weorks hard  </p>
+
+          </div>
           </div>
         </div>
       </div>

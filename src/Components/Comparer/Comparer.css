@@ -5,11 +5,41 @@
 }
 .res {
     font-size:60px;
-    margin-top:7%;
+    margin-top:2%;
     color:white;
     font-family:"montserrat";
     font-weight: 1000;
     text-align: center;
+}
+.res__hold{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.win__hold{
+    margin-top:2%;
+    width: 60%;
+    height: 13vh;
+    margin-left:20%;
+    margin-right:20%;
+    background-color: black;
+    border-radius: 30px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.win__hold img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+.win__hold p{
+    width: 70%;
+    margin-left: 6%;
+    color: white;
+    font-size:18px;
+    font-family:"montserrat"
 }
 .Comp__holder {
     margin-top:3%;
@@ -59,4 +89,31 @@
     width: 80%;
     height: 10%;
 
+}
+.winners {
+    margin-left:7% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    border-radius: 30px;
+    width:20%;
+    height:60vh;
+}
+.winners img{
+    margin-top: 5%;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.top__ele{
+    margin-top: 15%;
+}
+.winners  h1{
+    font-size:15px;
+    color: white;
+    font-family: "montserrat";
+}
+.winners .win__head{
+    font-size:25px;
 }
