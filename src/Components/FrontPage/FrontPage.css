@@ -42,9 +42,14 @@ input{
     width: 90%;
     height: 6vh;
     border-radius: 20px;
-    border: 2px solid;
+    border: 2px solid black;
     background:none;
+    padding-left:10px;
     font-size:20px;
+    color:white;
+}
+input::placeholder{
+    color:#a89696;
 }
 .bound {
     height: 40vh;
