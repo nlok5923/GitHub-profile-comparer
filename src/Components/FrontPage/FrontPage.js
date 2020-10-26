@@ -133,10 +133,10 @@ class FrontPage extends Component {
     let g = document.getElementById('comp');
     g.style.display = 'block';
     this.setState({
-   max_val_f : Math.max(this.state.no_of_followers_1,this.state.no_of_followers_2) + 20,
-  max_val_fo : Math.max(this.state.forks_1,this.state.forks_2) + 20,
-   max_val_r : Math.max(this.state.no_of_repos_1,this.state.no_of_repos_2)+ 30,
-   max_val_st : Math.max(this.state.count_1,this.state.count_2)+20,
+    max_val_f : Math.max(this.state.no_of_followers_1,this.state.no_of_followers_2) + 20,
+    max_val_fo : Math.max(this.state.forks_1,this.state.forks_2) + 20,
+    max_val_r : Math.max(this.state.no_of_repos_1,this.state.no_of_repos_2)+ 30,
+    max_val_st : Math.max(this.state.count_1,this.state.count_2)+20,
     max_val_wa : Math.max(this.state.watchers_1,this.state.watchers_2) + 20
     })
 
@@ -286,7 +286,7 @@ class FrontPage extends Component {
         this.state.repos_2.map((repo) => {
           this.setState(() => ({
             count_2: this.state.count_2 + repo.stargazers_count,
-            watchers_2:this.state.watchers_1 + repo.watchers_count,
+            watchers_2:this.state.watchers_2 + repo.watchers_count,
             forks_2:this.state.forks_2 + repo.forks_count
           }));
           return console.log(repo.stargazers_count);
