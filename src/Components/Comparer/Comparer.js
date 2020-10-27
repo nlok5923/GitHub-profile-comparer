@@ -49,7 +49,7 @@ class Comparer extends Component {
       max_val_fo,
       max_val_wa,
       max_val_st,
-      w1,w2,w3,w4,w5,winner
+      w1,w2,w3,w4,w5
     } = this.props;
    
     // const {img_1,img_2} = this.state
@@ -118,11 +118,11 @@ class Comparer extends Component {
             <img src={w5} alt="w1" ></img>
             </div>
           </div>
-          <div className="win__hold">
+          {/* <div className="win__hold">
           <img src={winner} alt="w1" ></img>
           <p>hello thi si the random text i am writing now this test will basiclall thhe quot said to winner becasue he weorks hard  </p>
 
-          </div>
+          </div> */}
           </div>
         </div>
       </div>

@@ -140,7 +140,29 @@ class FrontPage extends Component {
     max_val_wa : Math.max(this.state.watchers_1,this.state.watchers_2) + 20
     })
 
-    if(this.state.no_of_repos_1 > this.state.no_of_repos_2){
+   
+    console.log(this.state.c_w1+" "+this.state.c_w2)
+    // var k1 = Number(this.state.c_w1)
+    // console.log(k1)
+    // if(Number(this.state.c_w1) > Number(this.state.c_w2)){
+    //     this.setState({
+    //         winner:this.state.usr__1__imgSrc
+    //     })
+
+    // }
+    // else if(Number(this.state.c_w1) < Number(this.state.c_w2)){
+    //     this.setState({
+    //         winner:this.state.usr__2__imgSrc
+    //     })
+
+    // }
+    // else{
+    //     this.setState({
+    //         winner:"./Images/prof.jpg"
+    //     })
+
+    // }
+     if(this.state.no_of_repos_1 > this.state.no_of_repos_2){
         this.setState({
             w1:this.state.usr__1__imgSrc,
             c_w1:this.state.c_w1+1
@@ -246,8 +268,6 @@ class FrontPage extends Component {
 
     }
 
-
-
     }
   };
   handleChangeU2 = () => {
@@ -296,6 +316,11 @@ class FrontPage extends Component {
 
         // console.log(this.state.count)
       });
+      // this.handleCheck();
+
+
+     
+    // console.log(this.state.c_w1 + " "+this.state.c_w2)
 
     // if(this.state.use__2!=''){
     //     axios.get(`https://api.github.com/users/${this.state.usr__2}`)
