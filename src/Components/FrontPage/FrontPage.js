@@ -24,23 +24,23 @@ class FrontPage extends Component {
       rep: '',
       count_1: 0,
       count_2: 0,
-      forks_1:0,
-      forks_2:0,
-      watchers_1:0,
-      watchers_2:0,
-      max_val_f:0,
-      max_val_r:0,
-      max_val_fo:0,
-      max_val_wa:0,
-      max_val_st:0,
-      w1:"",
-      w2:"",
-      w3:"",
-      w4:"",
-      w5:"",
-      c_w1:0,
-      c_w2:0,
-      winner:""
+      forks_1: 0,
+      forks_2: 0,
+      watchers_1: 0,
+      watchers_2: 0,
+      max_val_f: 0,
+      max_val_r: 0,
+      max_val_fo: 0,
+      max_val_wa: 0,
+      max_val_st: 0,
+      w1: '',
+      w2: '',
+      w3: '',
+      w4: '',
+      w5: '',
+      c_w1: 0,
+      c_w2: 0,
+      winner: '',
     };
   }
   handleUsr__1 = (e) => {
@@ -54,8 +54,6 @@ class FrontPage extends Component {
     });
   };
   handleChangeU1 = () => {
-    // this.setState({[e.target.name]:e.target.value})
-    //   console.log(`https://api.github.com/users/${this.state.usr__1}`)
     axios
       .get(`https://api.github.com/users/${this.state.usr__1}`)
       .then((response) => {
@@ -69,7 +67,7 @@ class FrontPage extends Component {
       })
       .catch((error) => {
         console.log(error);
-        alert("please put a correct username")
+        alert('please put a correct username');
         this.setState({ errorMsg: 'Error retriveing data' });
       });
     axios
@@ -79,205 +77,130 @@ class FrontPage extends Component {
         this.setState({
           repos_1: response.data,
         });
-        //stargazers_count: 0
-        //console.log(this.state.repos_1[0])
-        //   var coun = 0 ;
-
         this.state.repos_1.map((repo) => {
           this.setState(() => ({
             count_1: this.state.count_1 + repo.stargazers_count,
-            forks_1:this.state.forks_1 + repo.forks_count,
-            watchers_1:this.state.watchers_1 + repo.watchers_count
+            forks_1: this.state.forks_1 + repo.forks_count,
+            watchers_1: this.state.watchers_1 + repo.watchers_count,
           }));
           return console.log(repo.stargazers_count);
-          // console.log(this.state.count)
         });
-        //  console.log(Number(coun))
-
-        // console.log(this.state.count)
       });
-
-    //  console.log(this.state.repos_1[0])
-    //http://api.github.com/repos/[username]/[reponame]
-    // https://api.github.com/users/nlok5923/starred{/owner}{/repo}
-    // axios.get(`http://api.github.com/repos/${this.state.usr__1}/${this.state.rep}`)
-    // .then(response=>{
-    //     console.log(response)
-    //     this.setState({
-    //         repos_1:response.data
-    //     })
-    // })
-
-    // if(this.state.use__2!=''){
-    //     axios.get(`https://api.github.com/users/${this.state.usr__2}`)
-    //     .then(response =>{
-    //         console.log(response)
-    //     })
-    //     .catch(error =>{
-    //         console.log(error);
-    //         this.setState({errorMsg:"Error retriveing data"})
-    //     })
-
-    // }
   };
   handleClick = () => {
+    if (this.state.usr__1 === '' || this.state.usr__2 === '') {
+      alert('please fill all fields');
+    } else {
+      let k = document.getElementById('front__page');
+      k.style.display = 'none';
+      let g = document.getElementById('comp');
+      g.style.display = 'block';
+      this.setState({
+        max_val_f:
+          Math.max(this.state.no_of_followers_1, this.state.no_of_followers_2) +
+          20,
+        max_val_fo: Math.max(this.state.forks_1, this.state.forks_2) + 20,
+        max_val_r:
+          Math.max(this.state.no_of_repos_1, this.state.no_of_repos_2) + 30,
+        max_val_st: Math.max(this.state.count_1, this.state.count_2) + 20,
+        max_val_wa: Math.max(this.state.watchers_1, this.state.watchers_2) + 20,
+      });
 
-     if(this.state.usr__1==='' || this.state.usr__2 ===''){
-         alert("please fill all fields");
-     }
-     else
-     {
-
-    let k = document.getElementById('front__page');
-    k.style.display = 'none';
-    let g = document.getElementById('comp');
-    g.style.display = 'block';
-    this.setState({
-    max_val_f : Math.max(this.state.no_of_followers_1,this.state.no_of_followers_2) + 20,
-    max_val_fo : Math.max(this.state.forks_1,this.state.forks_2) + 20,
-    max_val_r : Math.max(this.state.no_of_repos_1,this.state.no_of_repos_2)+ 30,
-    max_val_st : Math.max(this.state.count_1,this.state.count_2)+20,
-    max_val_wa : Math.max(this.state.watchers_1,this.state.watchers_2) + 20
-    })
-
-   
-    console.log(this.state.c_w1+" "+this.state.c_w2)
-    // var k1 = Number(this.state.c_w1)
-    // console.log(k1)
-    // if(Number(this.state.c_w1) > Number(this.state.c_w2)){
-    //     this.setState({
-    //         winner:this.state.usr__1__imgSrc
-    //     })
-
-    // }
-    // else if(Number(this.state.c_w1) < Number(this.state.c_w2)){
-    //     this.setState({
-    //         winner:this.state.usr__2__imgSrc
-    //     })
-
-    // }
-    // else{
-    //     this.setState({
-    //         winner:"./Images/prof.jpg"
-    //     })
-
-    // }
-     if(this.state.no_of_repos_1 > this.state.no_of_repos_2){
+      console.log(this.state.c_w1 + ' ' + this.state.c_w2);
+      if (this.state.no_of_repos_1 > this.state.no_of_repos_2) {
         this.setState({
-            w1:this.state.usr__1__imgSrc,
-            c_w1:this.state.c_w1+1
-        })
-    }
-    else if(this.state.no_of_repos_1 < this.state.no_of_repos_2){
+          w1: this.state.usr__1__imgSrc,
+          c_w1: this.state.c_w1 + 1,
+        });
+      } else if (this.state.no_of_repos_1 < this.state.no_of_repos_2) {
         this.setState({
-            w1:this.state.usr__2__imgSrc,
-            c_w2:this.state.c_w2+1
-           
-        })
-    }
-    else{
+          w1: this.state.usr__2__imgSrc,
+          c_w2: this.state.c_w2 + 1,
+        });
+      } else {
         this.setState({
-            w1:"./Images/prof.jpg"
-        })
-    }
-    if(this.state.forks_1 > this.state.forks_2){
+          w1: './Images/prof.jpg',
+        });
+      }
+      if (this.state.forks_1 > this.state.forks_2) {
         this.setState({
-            w2:this.state.usr__1__imgSrc,
-            c_w1:this.state.c_w1+1
-        })
-    }
-    else if(this.state.forks_1< this.state.forks_2){
+          w2: this.state.usr__1__imgSrc,
+          c_w1: this.state.c_w1 + 1,
+        });
+      } else if (this.state.forks_1 < this.state.forks_2) {
         this.setState({
-            w2:this.state.usr__2__imgSrc,
-            c_w2:this.state.c_w2+1
-        })
-    }
-    else{
+          w2: this.state.usr__2__imgSrc,
+          c_w2: this.state.c_w2 + 1,
+        });
+      } else {
         this.setState({
-            w2:"./Images/prof.jpg"
-        })
-    }
-    if(this.state.count_1 > this.state.count_2){
+          w2: './Images/prof.jpg',
+        });
+      }
+      if (this.state.count_1 > this.state.count_2) {
         this.setState({
-            w3:this.state.usr__1__imgSrc,
-            c_w1:this.state.c_w1+1
-
-        })
-    }
-    else if(this.state.count_1 < this.state.count_2){
+          w3: this.state.usr__1__imgSrc,
+          c_w1: this.state.c_w1 + 1,
+        });
+      } else if (this.state.count_1 < this.state.count_2) {
         this.setState({
-            w3:this.state.usr__2__imgSrc,
-            c_w2:this.state.c_w2+1
-        })
-    }
-    else{
+          w3: this.state.usr__2__imgSrc,
+          c_w2: this.state.c_w2 + 1,
+        });
+      } else {
         this.setState({
-            w3:"./Images/prof.jpg"
-        })
-    }
-    if(this.state.no_of_followers_1 > this.state.no_of_followers_2){
+          w3: './Images/prof.jpg',
+        });
+      }
+      if (this.state.no_of_followers_1 > this.state.no_of_followers_2) {
         this.setState({
-            w4:this.state.usr__1__imgSrc,
-            c_w1:this.state.c_w1+1
-        })
-    }
-    else if(this.state.no_of_followers_1 < this.state.no_of_followers_2){
+          w4: this.state.usr__1__imgSrc,
+          c_w1: this.state.c_w1 + 1,
+        });
+      } else if (this.state.no_of_followers_1 < this.state.no_of_followers_2) {
         this.setState({
-            w4:this.state.usr__2__imgSrc,
-            c_w2:this.state.c_w2+1
-        })
-    }
-    else{
+          w4: this.state.usr__2__imgSrc,
+          c_w2: this.state.c_w2 + 1,
+        });
+      } else {
         this.setState({
-            w4:"./Images/prof.jpg"
-        })
-    }
-    if(this.state.watchers_1 > this.state.watchers_2){
+          w4: './Images/prof.jpg',
+        });
+      }
+      if (this.state.watchers_1 > this.state.watchers_2) {
         this.setState({
-            w5:this.state.usr__1__imgSrc,
-            c_w1:this.state.c_w1+1
-        })
-    }
-    else if(this.state.watchers_1 < this.state.watchers_2){
+          w5: this.state.usr__1__imgSrc,
+          c_w1: this.state.c_w1 + 1,
+        });
+      } else if (this.state.watchers_1 < this.state.watchers_2) {
         this.setState({
-            w5:this.state.usr__2__imgSrc,
-            c_w2:this.state.c_w2+1
-        })
-    }
-    else{
+          w5: this.state.usr__2__imgSrc,
+          c_w2: this.state.c_w2 + 1,
+        });
+      } else {
         this.setState({
-            w5:"./Images/prof.jpg"
-        })
-    }
-    if(this.state.c_w1 > this.state.c_w2){
+          w5: './Images/prof.jpg',
+        });
+      }
+      if (this.state.c_w1 > this.state.c_w2) {
         this.setState({
-            winner:this.state.usr__1__imgSrc
-        })
-
-    }
-    else if(this.state.c_w1 < this.state.c_w2){
+          winner: this.state.usr__1__imgSrc,
+        });
+      } else if (this.state.c_w1 < this.state.c_w2) {
         this.setState({
-            winner:this.state.usr__1__imgSrc
-        })
-
-    }
-    else{
+          winner: this.state.usr__1__imgSrc,
+        });
+      } else {
         this.setState({
-            winner:"./Images/prof.jpg"
-        })
-
-    }
-
+          winner: './Images/prof.jpg',
+        });
+      }
     }
   };
   handleChangeU2 = () => {
-    // this.setState({[e.target.name]:e.target.value})
-    //   console.log(`https://api.github.com/users/${this.state.usr__1}`)
-    //  console.log("called")
     axios
       .get(`https://api.github.com/users/${this.state.usr__2}`)
       .then((response) => {
-        //console.log(response)
         this.setState({
           no_of_followers_2: response.data.followers,
           no_of_repos_2: response.data.public_repos,
@@ -288,7 +211,7 @@ class FrontPage extends Component {
       })
       .catch((error) => {
         console.log(error);
-        alert("please put a correct username")
+        alert('please put a correct username');
         this.setState({ errorMsg: 'Error retriveing data' });
       });
 
@@ -297,42 +220,17 @@ class FrontPage extends Component {
       .then((response) => {
         console.log(response);
         this.setState({
-          repos_2: response.data
+          repos_2: response.data,
         });
-        //stargazers_count: 0
-        //console.log(this.state.repos_1[0])
-        //   var coun = 0 ;
-
         this.state.repos_2.map((repo) => {
           this.setState(() => ({
             count_2: this.state.count_2 + repo.stargazers_count,
-            watchers_2:this.state.watchers_2 + repo.watchers_count,
-            forks_2:this.state.forks_2 + repo.forks_count
+            watchers_2: this.state.watchers_2 + repo.watchers_count,
+            forks_2: this.state.forks_2 + repo.forks_count,
           }));
           return console.log(repo.stargazers_count);
-          // console.log(this.state.count)
         });
-        //  console.log(Number(coun))
-
-        // console.log(this.state.count)
       });
-      // this.handleCheck();
-
-
-     
-    // console.log(this.state.c_w1 + " "+this.state.c_w2)
-
-    // if(this.state.use__2!=''){
-    //     axios.get(`https://api.github.com/users/${this.state.usr__2}`)
-    //     .then(response =>{
-    //         console.log(response)
-    //     })
-    //     .catch(error =>{
-    //         console.log(error);
-    //         this.setState({errorMsg:"Error retriveing data"})
-    //     })
-
-    // }
   };
 
   render() {
@@ -358,7 +256,12 @@ class FrontPage extends Component {
       max_val_fo,
       max_val_wa,
       max_val_st,
-      w1,w2,w3,w4,w5,winner
+      w1,
+      w2,
+      w3,
+      w4,
+      w5,
+      winner,
     } = this.state;
 
     return (
@@ -378,7 +281,7 @@ class FrontPage extends Component {
                   <input
                     type="text"
                     name={usr__1}
-                    placeholder='username'
+                    placeholder="username"
                     onChange={this.handleUsr__1}
                   ></input>
                   <button className="nxt__btn" onClick={this.handleChangeU1}>
@@ -410,12 +313,7 @@ class FrontPage extends Component {
               </button>
             </div>
           </div>
-
-          {/* <Comparer /> */}
         </div>
-        {/* no_of_followers:response.data.followers,
-                no_of_repos:response.data.public_repos,
-                no_of_gists:response.data.public_gists */}
         <Contact />
         <div id="comp">
           <Comparer
@@ -433,11 +331,11 @@ class FrontPage extends Component {
             forks_2={forks_2}
             watchers_1={watchers_1}
             watchers_2={watchers_2}
-            max_val_f ={max_val_f}
-            max_val_r={ max_val_r}
-            max_val_fo={ max_val_fo} 
-            max_val_wa ={max_val_wa}
-            max_val_st = {max_val_st}
+            max_val_f={max_val_f}
+            max_val_r={max_val_r}
+            max_val_fo={max_val_fo}
+            max_val_wa={max_val_wa}
+            max_val_st={max_val_st}
             w1={w1}
             w2={w2}
             w3={w3}
