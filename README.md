@@ -1,6 +1,6 @@
 # GitHub Profile Comparer 
 
-PS: After entering username do hit the arrow button to hit your GitHub data. 
+PS: After entering username do hit the arrow button to hit your GitHub data. In the winners section if you didn't get to see avatar it means there's a tie. 
 
 #### If you get your avatar displayed you are good to go.
 
