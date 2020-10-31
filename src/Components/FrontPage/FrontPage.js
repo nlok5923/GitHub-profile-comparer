@@ -3,6 +3,9 @@ import './FrontPage.css';
 import axios from 'axios';
 import Comparer from '../Comparer/Comparer';
 import Contact from '../Contact/Contact';
+// import RetroHitCounter from 'react-retro-hit-counter';
+
+
 
 class FrontPage extends Component {
   constructor(props) {
@@ -42,7 +45,7 @@ class FrontPage extends Component {
       c_w2: 0,
       winner: '',
     };
-  }
+  };
   handleUsr__1 = (e) => {
     this.setState({
       usr__1: e.target.value,
@@ -91,6 +94,8 @@ class FrontPage extends Component {
     if (this.state.usr__1 === '' || this.state.usr__2 === '') {
       alert('please fill all fields');
     } else {
+      let j = document.getElementById('counter')
+      j.style.display = "none"
       let k = document.getElementById('front__page');
       k.style.display = 'none';
       let g = document.getElementById('comp');
@@ -232,7 +237,6 @@ class FrontPage extends Component {
         });
       });
   };
-
   render() {
     const {
       usr__1,
@@ -263,11 +267,27 @@ class FrontPage extends Component {
       w5,
       winner,
     } = this.state;
+    // var values = {
+    //   '2016-06-23': 1,
+    //   '2016-06-26': 2,
+    //   '2016-06-27': 3,
+    //   '2016-06-28': 4,
+    //   '2016-06-29': 4
+    // }
+    // var until = '2016-06-30';
+  
 
     return (
       <div>
         <div id="front__page">
           <div className="whole__pg">
+          {/* <Calendar values={values} until={until} /> */}
+          {/* <Calendar  /> */}
+          {/* GitHubCalendar(".calendar", "your-username"); */}
+          {/* <div class="calendar">
+    {/* <!-- Loading stuff -->
+    Loading the data just for you. */}
+         {/* </div>  */}
             <h1 className="main__head">GitHub Profile Comparer </h1>
             <div className="main__hold">
               <div className="user__cred">
@@ -343,6 +363,9 @@ class FrontPage extends Component {
             w5={w5}
             winner={winner}
           />
+        </div>
+        <div id="counter">
+        <div className="powr-hit-counter" id="e0e75808_1604161769"></div>
         </div>
       </div>
     );

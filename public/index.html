@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+   rel="stylesheet"
+   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+/>
+    <link rel="stylesheet" href="node_modules/react-github-contribution-calendar/default.css" type="text/css" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -43,4 +48,15 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script
+  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
+></script>
+<script src="https://www.powr.io/powr.js?platform=react"></script>
+<script>
+// GitHubCalendar(".calendar", "nlok5923", {
+//        proxy (nlok5923) {
+//          return fetch(`https://your-proxy.com/github?user=${nlok5923}`)
+//        }
+//     }).then(r => r.text())
+</script>
 </html>

@@ -7,8 +7,12 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
+    "github-calendar": "^2.2.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-github-calendar": "^2.0.1",
+    "react-github-contribution-calendar": "^2.0.0",
+    "react-retro-hit-counter": "^1.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.4"
   },
